@@ -1,4 +1,4 @@
-const {userList, movieList} = require('./fakeData.js');
+let {userList, movieList} = require('./fakeData.js');
 
 
 const resolvers = {
@@ -34,6 +34,18 @@ const resolvers = {
             user.id = parseInt(lastId) + 1
             userList.push(user)
             return user
+        },
+        updateUser: (_, args) => {
+            const {id, name} = args.input
+            const data = userList.find(x => x.id === id)
+            data.name = name
+            return data
+        }, 
+        deleteUser: (_, args) => {
+            const {id} = args.input
+            const removedUser = userList.find(u => u.id === id);
+            userList = userList.filter(x => x.id !== id)
+            return removedUser
         }
     }
 }

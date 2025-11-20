@@ -25,8 +25,18 @@ const typeDefs = gql`
         nationality: Nationality = American
     }
 
+    input UpdateUserName{
+        id: ID!
+        name: String!
+    }
+    input DeleteUserById{
+        id: ID!
+    }
+
     type Mutation{
         createUser(input: CreateUserInput!): User
+        updateUser(input: UpdateUserName!): User
+        deleteUser(input: DeleteUserById!): User
     }
 
     type Query{
