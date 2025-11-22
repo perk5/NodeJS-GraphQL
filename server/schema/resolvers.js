@@ -1,6 +1,5 @@
 let {userList, movieList} = require('./fakeData.js');
 
-
 const resolvers = {
     Query: {
         // User Resolvers
