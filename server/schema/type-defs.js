@@ -22,7 +22,7 @@ const typeDefs = gql`
         name: String!
         username: String!
         age: Int!
-        nationality: Nationality = American
+        nationality: Nationality = AMERICAN
     }
 
     input UpdateUserName{
@@ -47,11 +47,11 @@ const typeDefs = gql`
     }
 
     enum Nationality{
-        American
-        Indian
-        Spanish
-        Irish
-        Chinese
+        AMERICAN
+        INDIAN
+        SPANISH
+        IRISH
+        CHINESE
     }
 
 `
